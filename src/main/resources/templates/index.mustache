@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bouquet Store</title>
+    <meta content="text/html" charset="UTF-8">
+    <style>
+        .bouquet {
+            border: 1px solid black;
+            margin: 20px;
+            padding: 10px;
+            width: 200px;
+        }
+
+        .bouquet img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<h1>Welcome to our Bouquet Store!</h1>
+<form action="/bouquet" method="post">
+    <label for="name">Bouquet name:</label><br>
+    <input type="text" id="name" name="name"><br>
+
+    <label for="price">Price:</label><br>
+    <input type="text" id="price" name="price"><br>
+
+    <label for="photoUrl">URL photo:</label><br>
+    <input type="text" id="photoUrl" name="photoUrl"><br>
+
+    <label for="description">Description:</label><br>
+    <input type="text" id="description" name="description"><br>
+
+    <input type="submit" value="Add bouquet">
+</form>
+{{#bouquets}}
+    <div class="bouquet">
+        <h2>{{name}}</h2>
+        <img src="{{photoUrl}}" alt="{{name}}"/>
+        <p>{{description}}</p>
+        <p>Price: {{price}}</p>
+    </div>
+{{/bouquets}}
+</body>
+</html>
